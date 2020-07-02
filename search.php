@@ -17,21 +17,20 @@ if(isset($_REQUEST["action"])){
     }
 }
 ?>
-<<<<<<< HEAD
-<form enctype="multipart/form-data" action="core.php" method="GET">
-=======
-<form enctype="multipart/form-data" action="core.php" method="POST">
->>>>>>> 5b08988da8ec288799bde0cb6819a0aa8a2c00f6
-<input type="text" name="fname" placeholder="firstname"/>
-<input type="text" name="lname" placeholder="lastname"/>
-<input type="email" name="usr_email" placeholder="molla@gmail.com"/>
-<input type="text" name="usr_pwd" placeholder="insert password"/>
-<input type="file" name="avatar"/>
-<input type="submit" name="submit" value="Sign up"/>
+<form  action="" method="POST">
+<input type="text" name='search'>
+<input type="submit" name="submitBTN" value="Search" style="border:1px solid #ddd; 
+background:tomato; color:white; border-radius:5px;padding:10px" />
 </form>
 <br>
 <br>
-<table border='1px'>
+
+<?php
+if(isset($_REQUEST['search'])){ 
+     $searchName= $_REQUEST['search'];?>
+   
+
+   <table border='1px'>
 
 <tr>
 <td><b>SN</b></td>
@@ -40,16 +39,14 @@ if(isset($_REQUEST["action"])){
     <td><b>lname</b></td>
     <td><b>email</b></td>
     <td><b>password</b></td>
-<<<<<<< HEAD
-    <td><b>Avatar</b></td>
-=======
     <td><b>Profile picture</b></td>
->>>>>>> 5b08988da8ec288799bde0cb6819a0aa8a2c00f6
     <td><b>Action</b></td>
 </tr>
 <?php
 require_once("connect.php");
-$dataInsert= "SELECT*FROM muzahidul";
+
+
+$dataInsert= "SELECT*FROM muzahidul WHERE fname LIKE '%$searchName%'";
 $connection=mysqli_query($connect,$dataInsert);
 if($connection==true){
     $snCount=1;
@@ -76,6 +73,8 @@ if($connection==true){
 
 
 </table>
+<?php } ?>
+
     
 <?php 
    

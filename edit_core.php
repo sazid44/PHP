@@ -9,7 +9,7 @@ if(isset($_REQUEST["submitButton"])){
     $updateQuery="UPDATE  muzahidul SET fname='$fname',lname='$lname',email='$email',usr_pwd='$pwd' WHERE id=$coreEdit";
     $runUpdate=mysqli_query($connect,$updateQuery); 
     if($runUpdate==true){
-        header("location: index1.php?action=true");
+        header("location: index.php?action=true");
     } else{
 echo mysqli_error($connect);
     }
