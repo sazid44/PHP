@@ -17,11 +17,12 @@ if(isset($_REQUEST["action"])){
     }
 }
 ?>
-<form action="core.php" method="GET">
+<form enctype="multipart/form-data" action="core.php" method="GET">
 <input type="text" name="fname" placeholder="firstname"/>
 <input type="text" name="lname" placeholder="lastname"/>
 <input type="email" name="usr_email" placeholder="molla@gmail.com"/>
 <input type="text" name="usr_pwd" placeholder="insert password"/>
+<input type="file" name="avatar"/>
 <input type="submit" name="submit" value="Sign up"/>
 </form>
 <br>
@@ -35,6 +36,7 @@ if(isset($_REQUEST["action"])){
     <td><b>lname</b></td>
     <td><b>email</b></td>
     <td><b>password</b></td>
+    <td><b>Avatar</b></td>
     <td><b>Action</b></td>
 </tr>
 <?php
