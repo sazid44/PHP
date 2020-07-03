@@ -25,7 +25,7 @@
       $('#readId').val('Hello');
       $('#spin img').remove();
     })
-    }, 1000);
+    }, 2000);
   
 })
 
