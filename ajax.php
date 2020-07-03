@@ -11,21 +11,26 @@
     <input type="text" name="usrName" id="name">
     <input type="text" name="usrPwd" id="pass">
     <input type="submit" name="subButton" id="SB">
+    <input type="readonly" name="" id="readId">
      </form>
    <div id=spin></div>
    <script>
-       $(document).ready(function(){
+
         $('#SB').click(function () {
-    var myUsr=$('#name').val()
-    var myPwd=$('#pass').val()
-    $('#spin').html('<img src='images/spinner.gif' alt=''/>)
-    $.post('sendAjax.php',{uName:myUsr,uPwd:myPwd},function (mydata) {
-        
+    var myUsr=$('#name').val();
+    var myPwd=$('#pass').val();
+    $('#spin').html('<img src="images/spinner.gif" alt=""/>');
+    setTimeout(function(){
+        $.post('sendAjax.php',{uName:myUsr,uPwd:myPwd},function (mydata) {
+      $('#readId').val('Hello');
+      $('#spin img').remove();
     })
+    }, 1000);
+  
 })
 
 
-       })
+ 
 
 
    </script>
