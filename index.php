@@ -17,11 +17,7 @@ if(isset($_REQUEST["action"])){
     }
 }
 ?>
-<<<<<<< HEAD
-<form enctype="multipart/form-data" action="core.php" method="GET">
-=======
 <form enctype="multipart/form-data" action="core.php" method="POST">
->>>>>>> 5b08988da8ec288799bde0cb6819a0aa8a2c00f6
 <input type="text" name="fname" placeholder="firstname"/>
 <input type="text" name="lname" placeholder="lastname"/>
 <input type="email" name="usr_email" placeholder="molla@gmail.com"/>
@@ -40,11 +36,7 @@ if(isset($_REQUEST["action"])){
     <td><b>lname</b></td>
     <td><b>email</b></td>
     <td><b>password</b></td>
-<<<<<<< HEAD
     <td><b>Avatar</b></td>
-=======
-    <td><b>Profile picture</b></td>
->>>>>>> 5b08988da8ec288799bde0cb6819a0aa8a2c00f6
     <td><b>Action</b></td>
 </tr>
 <?php
