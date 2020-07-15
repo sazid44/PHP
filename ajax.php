@@ -21,11 +21,12 @@
     var myPwd=$('#pass').val();
     $('#spin').html('<img src="images/spinner.gif" alt=""/>');
     setTimeout(function(){
-        $.post('sendAjax.php',{uName:myUsr,uPwd:myPwd},function (mydata) {
-      $('#readId').val('Hello');
-      $('#spin img').remove();
+        $.post('sendAjax.php',{uName:myUsr,uPwd:myPwd},function (myData) {
+        $('#readId').val('Hello');
+        $('#spin img').remove();
+        //alert(myData) ;
     })
-    }, 2000);
+    }, 1000);
   
 })
 

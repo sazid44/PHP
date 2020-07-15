@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <?php
@@ -47,7 +48,7 @@ if($connection==true){
     $snCount=1;
     while($mydata=mysqli_fetch_array($connection)){?>
 
-     <tr>
+     <tr id="data<?php echo $mydata["id"];?>">
      <td><?php echo $snCount;$snCount++;?></td>
      <td><?php echo $mydata["id"];?></td>
         <td><?php echo $mydata["fname"];?></td>
@@ -55,19 +56,29 @@ if($connection==true){
         <td><?php echo $mydata["email"];?></td>
         <td><?php echo $mydata["usr_pwd"];?></td>
         <td><center><img width='60px' src="images/<?php echo $mydata["avatar"];?>" alt=""></center></td>
-        <td><a href="edit.php?edit_id=<?php echo $mydata["id"];?>">Edit</a> | <a href="delete.php?id=<?php echo $mydata["id"];?>">Delete</a></td>
+        <td><a href="edit.php?edit_id=<?php echo $mydata["id"];?>">Edit</a> | <a onclick="return confirm('Are you sure?')" href="#" id="deleteJq" data-myvalue="<?php echo $mydata["id"];?>";>Delete</a></td>
+        
+       <!--href="delete.php?id=<?php echo $mydata["id"];?>"-->
     </tr>
-    
-    
-
-   <?php }}?>
-
-
-
-
-
-
+ <?php }}?>
 </table>
+
+<script>
+$('a#deleteJq').on("click",function(){
+    var getThat=$(this).data("myvalue");
+    //alert(getThat);
+    $.post("delete.php",{id:getThat},function (returnData) {
+        var myReturn=returnData;
+        if (myReturn=='1') {
+           
+            alert('Data deleted'); 
+
+        }
+      
+    })
+  $(this).parent().parent().remove();
+})
+</script>
     
 <?php 
    
