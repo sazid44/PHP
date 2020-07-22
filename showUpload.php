@@ -13,9 +13,9 @@ echo "<br/>";
 echo "file tmp_name:". $fileTmpName;
 echo "<br/>";
 
-$error= floor($fileSize/1000);
-if($error<100){
-	echo "file size:".$error ."KB";
+$picSize= floor($fileSize/1000);
+if($picSize<100){
+	echo "file size:".$picSize ."KB";
 }else
 	echo "too large";
 

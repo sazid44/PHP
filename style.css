@@ -1,0 +1,97 @@
+body{
+    background-color: #2c2e36;
+}
+#login{
+    padding: 50px;
+    transform: translate(450px,100px);
+    background: -webkit-linear-gradient(120deg,#bd8989,#202120);
+    width: 270px;
+    height: 400px;
+    box-shadow: 2px 3px 5px rgb(255 123 111);
+}
+#iconDiv{
+    width: 40px;
+    height: 35px;
+    background-color: rgb(212, 88, 165);
+    text-align: center;
+    transform: translate(-20px, 36px);
+}
+#line{
+    width: 200px;
+    height: 4px;
+    background: -webkit-linear-gradient(120deg,#ff00f7,#00d0ff);
+    transform:  translate(25px,-34px);
+}
+i{
+    transform: translateY(10px);
+}
+h3{
+    display: inline;
+}
+h1{
+    background: -webkit-linear-gradient(#fee140,#fa709a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+    transform: translate(20px,-10px);
+}
+#inp{
+    width: 270px;
+    height: 30px;
+    position: relative;
+    left: 20px;
+border-left: none;
+}
+
+.btn-hover{
+    width: 200px;
+
+position: relative;
+left: 35px;
+top: 30px;
+padding: .3em;
+cursor: pointer;
+border-radius: 20px;
+background: linear-gradient(to right, #56ccf2,#2f80ed);
+border: 0;
+}
+.btn-hover::before,
+.btn-hover::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+ background: linear-gradient(to right, #56ccf2,#2f80ed);
+ border-radius: 35px;
+transition: all .5s ease-in-out;
+}
+.btn-hover:hover::before{
+    filter: blur(5px);
+}
+.btn-hover:hover::after{
+    filter: blur(5px);
+}
+.btn-hover:hover{
+    animation: hue 3s linear infinite;
+}
+@keyframes hue{
+    0%{
+        filter:hue-rotate(0deg);
+    }
+    100%{
+        filter:hue-rotate(360deg);
+    } 
+}
+.btn-hover span{
+   position: relative; 
+   z-index: 3;
+   display: block;
+   color: azure;
+   font-size: 15px;
+padding: 0.5em;
+background-color: #2c2e36;
+border-radius: 17px;
+}
+

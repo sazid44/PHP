@@ -1,6 +1,6 @@
 <?php
       require_once("connect.php");
-   if(isset($_REQUEST["fname"]) && isset($_REQUEST["lname"]) && isset($_REQUEST["usr_email"]) && isset($_REQUEST["usr_pwd"])){
+   if(isset($_REQUEST["fname"]) || isset($_REQUEST["lname"]) || isset($_REQUEST["usr_email"]) || isset($_REQUEST["usr_pwd"])){
    $fname =$_REQUEST["fname"]; 
    $lname =$_REQUEST["lname"];
    $email =$_REQUEST["usr_email"];

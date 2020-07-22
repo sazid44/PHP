@@ -42,11 +42,13 @@ if(isset($_REQUEST["action"])){
 </tr>
 <?php
 require_once("connect.php");
+
 $dataInsert= "SELECT*FROM muzahidul";
-$connection=mysqli_query($connect,$dataInsert);
+$connection=mysqli_query($connect,$dataInsert);//Running the query(making an object)
 if($connection==true){
     $snCount=1;
-    while($mydata=mysqli_fetch_array($connection)){?>
+    //making an array
+    while($mydata=mysqli_fetch_assoc($connection)){?>
 
      <tr id="data<?php echo $mydata["id"];?>">
      <td><?php echo $snCount;$snCount++;?></td>

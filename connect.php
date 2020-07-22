@@ -6,4 +6,5 @@ $host="localhost";
     $dbName="test";
    
    $connect=mysqli_connect($host,$dbUser,$dbPwd,$dbName);
+  
    ?>
